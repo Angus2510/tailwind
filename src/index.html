@@ -6,12 +6,9 @@
     <link href="../dist/output.css" rel="stylesheet" />
     <script
       defer
-      src="./src/assets/assets/fontawesome/js/fontawesome.min.js"
+      src="./assets/assets/fontawesome/js/fontawesome.min.js"
     ></script>
-    <script
-      defer
-      src="./src/assets/assets/fontawesome/js/solid.min.js"
-    ></script>
+    <script defer src="./assets/assets/fontawesome/js/solid.min.js"></script>
     <script>
       window.onload = () => {
         const mobileMenuIcon = document.getElementById("mobile-menu-button");
@@ -31,14 +28,46 @@
             ticketsMenuItem.classList.add("open");
           }
         });
+
+        //creating logic for light and dark mode
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+          if (document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark");
+          } else {
+            document.body.classList.add("dark");
+          }
+        });
+
+        //creating a click function for the carousel
+        const previousButton = document.getElementById("previous");
+        const nextButton = document.getElementById("next");
+        const carousel = document.getElementById("carousel");
+
+        nextButton.addEventListener("click", () => {
+          const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+          carousel.scrollLeft = carousel.scrollLeft + itemWidth;
+        });
+
+        previousButton.addEventListener("click", () => {
+          const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+          carousel.scrollLeft = carousel.scrollLeft - itemWidth;
+        });
       };
     </script>
   </head>
-  <body>
-    <main>
+  <body class="dark">
+    <main class="bg-zinc-200 dark:bg-zinc-900">
       <header class="text-zinc-200">
+        <button
+          id="dark-mode-toggle"
+          class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl"
+        >
+          <i class="fa-solid fa-sun dark:hidden"></i>
+          <i class="fa-solid fa-moon hidden dark:inline"></i>
+        </button>
         <nav
-          class="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-700"
+          class="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-700 z-10"
         >
           <div class="flex items-center p-2 gap-2">
             <img
@@ -130,14 +159,178 @@
                   <span>7 day ticket</span>
                 </div>
               </div>
-
               <div class="menu-item">
                 <span>Support</span>
               </div>
             </div>
           </div>
         </nav>
+        <!--Hero section-->
+        <div
+          style="background-image: url('./assets/assets/images/hero.jpg')"
+          class="flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px] bg-cover bg-center bg-fixed"
+        >
+          <div
+            class="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md"
+          >
+            <div class="relative">
+              <img
+                src="./assets/assets/images/logo.png"
+                alt="logo"
+                width="175"
+              />
+              <!--animation for headphones-->
+              <div class="flex items-center justify-center mt-[-70px] mb-5">
+                <div
+                  class="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center gap-1"
+                >
+                  <div
+                    class="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-100"
+                  ></div>
+                  <div
+                    class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-200"
+                  ></div>
+                  <div
+                    class="h-4 w-1 bg-pink-100 rounded-full animate-wavey animation-delay-300"
+                  ></div>
+                  <div
+                    class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-400"
+                  ></div>
+                  <div
+                    class="h-2 w-1 bg-pink-300 rounded-full animate-wavey"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="text-5xl font-bold">
+              tw:<span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <!--form section-->
+          <div class="font-bold mt-3 text-sm">
+            Keep me updated with news and promotions
+          </div>
+          <form class="mt-3 flex gap-2">
+            <input
+              type="email"
+              placeholder="Email"
+              class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500 focus:outline"
+            />
+            <button
+              type="submit"
+              class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
       </header>
+      <!--main content-->
+      <div
+        class="max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200"
+      >
+        <h2 class="h2">Headliners</h2>
+        <p>
+          Experience the sonic delight from these made-up artists across 7 days
+          that music fans are calling 'one of the many gigs that will happen
+          this year
+        </p>
+        <!--headliners carousel bands-->
+        <div class="flex">
+          <!--next and previous buttons on side of carousel-->
+          <div
+            id="previous"
+            class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8"
+          >
+            <i class="fas fas fa-angle-left"></i>
+          </div>
+
+          <div class="">
+            <div
+              id="carousel"
+              class="mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto scroll-smooth flex-1"
+            >
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band1.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">Corduroy Gary</h5>
+                <h6>1st July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band2.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">John Jones</h5>
+                <h6>8th July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band3.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">Sweenie todd</h5>
+                <h6>12th July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band4.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">Apples</h5>
+                <h6>15th July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band5.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">MGNT</h5>
+                <h6>18th July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band6.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">The Purps</h5>
+                <h6>21st July 9pm - Main Stage</h6>
+              </div>
+              <div class="min-w-[80%] md:min-w-[40%]">
+                <div
+                  style="
+                    background-image: url('./assets/assets/images/band7.jpg');
+                  "
+                  class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
+                ></div>
+                <h5 class="mt-2">Kings Cross</h5>
+                <h6>25th July 9pm - Main Stage</h6>
+              </div>
+            </div>
+          </div>
+          <!--next and previous buttons on side of carousel-->
+          <div
+            id="next"
+            class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8"
+          >
+            <i class="fas fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
