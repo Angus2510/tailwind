@@ -61,7 +61,7 @@
       <header class="text-zinc-200">
         <button
           id="dark-mode-toggle"
-          class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl"
+          class="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl z-10"
         >
           <i class="fa-solid fa-sun dark:hidden"></i>
           <i class="fa-solid fa-moon hidden dark:inline"></i>
@@ -288,7 +288,7 @@
                   class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
                 ></div>
                 <h5 class="mt-2">Apples</h5>
-                <h6>15th July 9pm - Main Stage</h6>
+                <h6>7th July 9pm - Main Stage</h6>
               </div>
               <div class="min-w-[80%] md:min-w-[40%]">
                 <div
@@ -297,8 +297,8 @@
                   "
                   class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
                 ></div>
-                <h5 class="mt-2">MGNT</h5>
-                <h6>18th July 9pm - Main Stage</h6>
+                <h5 class="mt-2">MGMT</h5>
+                <h6>2nd July 9pm - Main Stage</h6>
               </div>
               <div class="min-w-[80%] md:min-w-[40%]">
                 <div
@@ -308,7 +308,7 @@
                   class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
                 ></div>
                 <h5 class="mt-2">The Purps</h5>
-                <h6>21st July 9pm - Main Stage</h6>
+                <h6>2nd July 10pm - Main Stage</h6>
               </div>
               <div class="min-w-[80%] md:min-w-[40%]">
                 <div
@@ -318,7 +318,7 @@
                   class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"
                 ></div>
                 <h5 class="mt-2">Kings Cross</h5>
-                <h6>25th July 9pm - Main Stage</h6>
+                <h6>5th July 9pm - Main Stage</h6>
               </div>
             </div>
           </div>
@@ -330,7 +330,84 @@
             <i class="fas fa-angle-right"></i>
           </div>
         </div>
+        <h2 class="mt-20">Lineup</h2>
+        <p>
+          Follow the time table and stage to ensure that you dont miss your
+          favourite bands!!
+        </p>
+        <!--Using CSS grid to display lineup-->
+        <div
+          class="mt-5 bg-zinc-800 rounded-l py-4 px-2 text-zinc-200 relative"
+        >
+          <div
+            class="absolute top-0 left-1/2 w-4 ml-[-8px] h-full rounded-full bg-gradient-to-b via-cyan-900 from-sky-900 to-teal-900"
+          >
+            <div class="sticky top-1/2">
+              <div class="relative h-4 w-4">
+                <div
+                  class="h-4 w-4 animate-ping rounded-full bg-pink-500 opacity-75 absolute"
+                ></div>
+                <div class="bg-rose-500 rounded-full relative h-4 w-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="">
+              <h4 class="p-2 bg-zinc-900 rounded-lg my-4">1st July</h4>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">Jackie Chaston</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+              <div class="font-bold">Jackie Chaston</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+
+            <div class="">
+              <h4 class="p-2 bg-zinc-900 rounded-lg my-4">2nd July</h4>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">Jackie Chaston</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div>
+              <div class="font-bold">Jackie Chaston</div>
+              <div class="text-zinc-400">6pm - sage stage</div>
+            </div>
+          </div>
+        </div>
+        <!--Tickets prices in table-->
+        <h2 class="mt-20">Tickets</h2>
+        <table class="mt-5 table w-full border border-zinc-500 border-collapse">
+          <thead class="text-lg font-bold">
+            <td class="border border-zinc-500 p-3">Tickets</td>
+            <td class="border border-zinc-500 p-3">Price</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">
+                Single day ticket
+              </td>
+              <td class="border border-zinc-500 py-2 px-3">R250</td>
+            </tr>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">7 day ticket</td>
+              <td class="border border-zinc-500 py-2 px-3">R 1500</td>
+            </tr>
+          </tbody>
+          <caption class="caption-bottom">
+            Once they are gone, they are gone!
+          </caption>
+        </table>
       </div>
     </main>
+    <div class="btn btn-rose-500">Some button</div>
   </body>
 </html>

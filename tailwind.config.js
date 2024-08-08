@@ -1,4 +1,5 @@
 const plugin = require("tailwindcss");
+const buttonPlugin = require("./plugins/buttonPlugin.js");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -24,5 +25,7 @@ module.exports = {
   plugins: [
     require("./plugins/openVariant.js"),
     require("./plugins/animationDelay.js"),
+    require("./plugins/tableCaption.js"),
+    require("./plugins/buttonPlugin.js"),
   ],
 };
